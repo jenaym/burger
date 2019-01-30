@@ -8,7 +8,7 @@ var app = express();
 app.use(express.static("public"));
 
 // Parse application body as JSON
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Set Handlebars
@@ -19,7 +19,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them
 var routes = require("./controllers/burgers_controller.js");
 
-app.use(routes);
+app.use("/", routes);
 
 // Start our server so that it can begin listening to client requests
 app.listen(PORT, function() {

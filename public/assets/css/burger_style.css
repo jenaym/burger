@@ -1,0 +1,30 @@
+
+.container {
+	text-align: center;
+	background-color: goldenrod;
+	font-family: Arial;
+}
+.jumbo {
+	background-color: goldenrod;
+	font-size: 40px;
+	color: red;
+}
+#burger-image {
+	height: 150px;
+	margin-bottom: -20px;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Fontdiner Swanky', cursive;
+	font-size: 65px;
+	margin: 50px;
+}
+
+
+
+
+
+
+
+

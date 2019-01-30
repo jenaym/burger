@@ -1,40 +1,47 @@
-<h1>Eat-Da-Burger!</h1>
-
 
 <div class="container">
+<div class="jumbotron" id="jumbo">Eat-Da-Burger</div>
   <div class="row">
-    <div class="col-6">
-      <ul>
+    <div class="col-lg-6">
+      <div class="undevoured-list">
+        <h3>Burgers to Devour!</h3>
+        <ul>
         {{#each burgers}}
         {{#unless devoured}}
-        <li>
-          {{burger_name}}
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit">Devour It!</button>
-          </form>
-        </li>
+            <li>
+              <p>{{burger_name}}
+                  <button class="devourButton" burgerID="{{id}}">Devour It!</button>
+              </p>
+            </li>
         {{/unless}}
         {{/each}}
-      </ul>
+        </ul>
+      </div>
     </div>
 
-    <div class="col-6" id="burgerEaten">
-      <ul>
+
+    <div class="col-lg-6" id="burgerEaten">
+      
+      <div class="devoured-list">
+        <h3>Burgers Devoured!</h3>
+        <ul>
         {{#each burgers}}
-        {{#if devoured}}
-        <li>
-          {{burger_name}}
-        </li>
-        {{/if}}
+          {{#if devoured}}
+            <li>
+              <p>{{burger_name}}</p>
+            </li>          
+          {{/if}}
         {{/each}}
-      </ul>
+        </ul>
+      </div>
+
     </div>
   </div>
+
   <div class="row">
-    <div class="col-12">
+    <div class="col-lg-12">
       <h2>Add a Burger!</h2>
-      <form class="create-form">
+      <form class="create-form" action="/api/burgers" method="POST">
         <div class="form-group">
           <label for="burgerN">Burger Name:</label>
           <input type="text" id="burgerN" name="burger_name">
@@ -44,3 +51,4 @@
     </div>
   </div>
 </div>
+

@@ -6,17 +6,17 @@ var burger = {
             cb(res);
         });
     },
-    insertOne: function(cols, vals, cb) {
-        orm.insertOne("burgers", cols, vals, function(res) {
+    insertOne: function(col, val, cb) {
+        orm.insertOne("burgers", col, val, function(res) {
             cb(res);
         });
     },
-    updateOne: function(objColVals, condition, cb) {
-        orm.updateOne("burgers", objColVals, condition, function(res) {
+    updateOne: function(val, condition, cb) {
+        orm.updateOne("burgers", val, condition, function(res) {
             cb(res);
         });
     }
 };
 
-// Export the database functiosn for the controller (burgers_controller.js)
+// Export the database functions for the controller (burgers_controller.js)
 module.exports = burger;
